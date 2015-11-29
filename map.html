@@ -1,1 +1,38 @@
-<iframe width="100%" height="100%" frameborder="0" src="https://maxmrb.cartodb.com/viz/f49efc30-9676-11e5-86a9-0e98b61680bf/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Home</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
+<style>
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+<body>
+<div id='map'></div>
+<script>
+L.mapbox.accessToken = 'pk.eyJ1IjoibWF4bWFyYm9ldWYiLCJhIjoiY2lndTlodXliMDBvbHdjbTVnY3FlazFmMyJ9.c9bKG-wlMw0cmKbyqYAA5A';
+var map = L.mapbox.map('map', 'maxmarboeuf.o59i8j05')
+    .setView([31.24439, 121.449123], 12);
+	// The maxZoom states which zoom the markers are fully opaque at -
+    // in this case, there are few markers far apart, so we set it low.
+    heat = L.heatLayer([], { maxZoom: 12 }).addTo(map);
+
+// We're just using a featureLayer to pull marker data from Mapbox -
+// this is not added to the map.
+var layer = L.mapbox.featureLayer('examples.map-zr0njcqy').on('ready', function() {
+    // Zoom the map to the bounds of the markers.
+    map.fitBounds(layer.getBounds());
+    // Add each marker point to the heatmap.
+    layer.eachLayer(function(l) {
+        heat.addLatLng(l.getLatLng());
+    });
+});
+
+
+</script>
+</body>
+</html>
