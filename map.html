@@ -24,7 +24,7 @@ var map = L.mapbox.map('map', 'maxmarboeuf.o59i8j05'),
 
 // We're just using a featureLayer to pull marker data from Mapbox -
 // this is not added to the map.
-var layer = L.mapbox.featureLayer('examples.map-zr0njcqy').on('ready', function() {
+var layer = L.mapbox.featureLayer('maxmarboeuf.o59i8j05').on('ready', function() {
     // Zoom the map to the bounds of the markers.
     map.fitBounds(layer.getBounds());
     // Add each marker point to the heatmap.
