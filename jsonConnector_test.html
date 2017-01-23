@@ -87,18 +87,18 @@ function _ajaxRequestHelper(url, successCallback, conUrl, nextFunction, specialS
     }
   });
 }
-
+/*
 // try the straightforward request
 function _basicAjaxRequest1(url, successCallback){
   _ajaxRequestHelper(url, successCallback, url, _corsioProxyAjaxRequest2);
 }
-/*
+*/
 // try to use cors.io as a proxy
 function _corsioProxyAjaxRequest2(url, successCallback){
   var corsUrl = "http://cors.io/?u=" + url;
   _ajaxRequestHelper(url, successCallback, corsUrl, _yqlProxyAjaxRequest3);
 }
-
+/*
 // try to use yql as a proxy
 function _yqlProxyAjaxRequest3(url, successCallback){
   var yqlQueryBase = "http://query.yahooapis.com/v1/public/yql?q=";
