@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>UNOCHA WDC</title>
+<title>json Connector</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
 <script src="https://connectors.tableau.com/libs/tableauwdc-1.1.1.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -87,12 +87,12 @@ function _ajaxRequestHelper(url, successCallback, conUrl, nextFunction, specialS
     }
   });
 }
-*/
+
 // try the straightforward request
 function _basicAjaxRequest1(url, successCallback){
   _ajaxRequestHelper(url, successCallback, url, _corsioProxyAjaxRequest2);
 }
-/*
+
 // try to use cors.io as a proxy
 function _corsioProxyAjaxRequest2(url, successCallback){
   var corsUrl = "http://cors.io/?u=" + url;
@@ -273,6 +273,7 @@ $(document).ready(function(){
 });
 
 </script>
+
 <style>
 #dragandrophandler {
   border:1px dashed #999;
