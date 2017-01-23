@@ -242,6 +242,7 @@ $(document).ready(function(){
   $("#inputForm").submit(function(e) { // This event fires when a button is clicked
     // Since we use a form for input, make sure to stop the default form behavior
     cancel(e);
+    var jsonString = $('textarea[name=jsonText]')[0].value.trim();
     var jsonUrl = $('input[name=jsonUrl]')[0].value.trim();
     _submitToJsonToTableau(jsonString, jsonUrl);
   });
