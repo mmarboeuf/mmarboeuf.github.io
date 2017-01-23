@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>json Connector</title>
+<title>UNOCHA WDC</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
 <script src="https://connectors.tableau.com/libs/tableauwdc-1.1.1.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -87,18 +87,18 @@ function _ajaxRequestHelper(url, successCallback, conUrl, nextFunction, specialS
     }
   });
 }
-/*
+*/
 // try the straightforward request
 function _basicAjaxRequest1(url, successCallback){
   _ajaxRequestHelper(url, successCallback, url, _corsioProxyAjaxRequest2);
 }
-*/
+/*
 // try to use cors.io as a proxy
 function _corsioProxyAjaxRequest2(url, successCallback){
   var corsUrl = "http://cors.io/?u=" + url;
   _ajaxRequestHelper(url, successCallback, corsUrl, _yqlProxyAjaxRequest3);
 }
-/*
+
 // try to use yql as a proxy
 function _yqlProxyAjaxRequest3(url, successCallback){
   var yqlQueryBase = "http://query.yahooapis.com/v1/public/yql?q=";
@@ -127,7 +127,7 @@ function _jsonpAjax4(url, successCallback){
     }
   });
 }
-*/
+
 function _giveUpOnUrl9(url, successCallback) {
   tableau.abortWithError("Could not load url: " + url);
 }
@@ -274,17 +274,6 @@ $(document).ready(function(){
 
 </script>
 
-<style>
-#dragandrophandler {
-  border:1px dashed #999;
-  width:300px;
-  color:#333;
-  text-align:left;vertical-align:middle;
-  padding:10px 10px 10 10px;
-  margin:10px;
-  font-size:150%;
-}
-</style>
 </head>
 <body>
 
