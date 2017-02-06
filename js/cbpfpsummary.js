@@ -23,7 +23,7 @@
             { id: "ProjectDuration", alias: "ProjectDuration", dataType: tableau.dataTypeEnum.float },
             { id: "Budget", alias: "Budget", dataType: tableau.dataTypeEnum.string }, 
             { id: "TotalDirectCost", alias: "TotalDirectCost", dataType: tableau.dataTypeEnum.string }, 
-            { id: "DateSubmitted", alias: "DateSubmitted", dataType: tableau.dataTypeEnum.float },
+            { id: "DateSubmitted", alias: "DateSubmitted", dataType: tableau.dataTypeEnum.datetime },
             { id: "Men", alias: "Men", dataType: tableau.dataTypeEnum.float },
             { id: "Women", alias: "Women", dataType: tableau.dataTypeEnum.string }, 
             { id: "Boys", alias: "Boys", dataType: tableau.dataTypeEnum.string }, 
